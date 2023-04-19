@@ -1,0 +1,6 @@
+<h1>Ranking for {{ subject }}</h1>
+<ol>
+{% for mark in marks %}
+    <li>{{ mark.student.full_name }} - {{ mark.mark }}</li>
+{% endfor %}
+</ol>

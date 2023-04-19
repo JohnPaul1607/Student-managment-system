@@ -1,0 +1,60 @@
+{% extends 'student/student_base.html' %}
+
+{% block title %}
+    Student - Dashboard
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin: 100px;">
+        <h1>Dashboard</h1>
+        <table class="table">
+            <tr>
+                <th>School</th>
+                <td>{{student.school}}</td>
+
+                <th>Class</th>
+                <td>{{student.Class}}</td>
+
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{student.section}}</td>
+                <th>Student Name</th>
+                <td>{{student.full_name}}</td>
+            </tr>
+            <tr>
+                <th>Father's Name</th>
+                <td>{{student.father_name}}</td>
+                <th>Gender</th>
+                <td>{{student.gender}}</td>
+            </tr>
+
+            <tr>
+                <th>City</th>
+                <td>{{student.city}}</td>
+                <th>Contact Number</th>
+                <td>{{student.contact_num}}</td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{student.email}}</td>
+                <th>Student Id</th>
+                <td>{{student.stu_id}}</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td>{{student.date_of_birth}}</td>
+
+                <th>User Name</th>
+                <td>{{student.user_name}}</td>
+        
+
+            </tr>
+        </table>
+        <form action="{% url 'student_logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Logout" class="btn btn-primary form-control">
+        </form>
+    </div>
+{% endblock %}
